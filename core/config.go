@@ -26,6 +26,8 @@ type Config struct {
 	Regions               string
 	AllowedInstanceTypes  string
 
+	TagName string
+
 	// This is only here for tests, where we want to be able to somehow mock
 	// time.Sleep without actually sleeping. While testing it defaults to 0 (which won't sleep at all), in
 	// real-world usage it's expected to be set to 1

@@ -268,7 +268,8 @@ func (r *region) scanForEnabledAutoScalingGroupsByTag() []*string {
 
 	input := autoscaling.DescribeTagsInput{
 		Filters: []*autoscaling.Filter{
-			{Name: aws.String("key"), Values: []*string{aws.String("spot-enabled")}},
+
+			{Name: aws.String("key"), Values: []*string{aws.String(r.conf.TagName)}},
 			{Name: aws.String("value"), Values: []*string{aws.String("true")}},
 		},
 	}
